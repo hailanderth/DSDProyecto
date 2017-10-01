@@ -1,0 +1,4 @@
+E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\ProyectoDSD\MD.GA.COMMOM\bin\Debug\MD.GA.COMMOM.dll
+E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\ProyectoDSD\MD.GA.COMMOM\bin\Debug\MD.GA.COMMOM.pdb
+E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\ProyectoDSD\MD.GA.COMMOM\obj\Debug\MD.GA.COMMOM.dll
+E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\ProyectoDSD\MD.GA.COMMOM\obj\Debug\MD.GA.COMMOM.pdb
