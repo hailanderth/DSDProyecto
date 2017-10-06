@@ -48,7 +48,7 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
             txtMontoDisponible.Focus();
-            
+
         }
 
         private void OrdenCompra_Load(object sender, EventArgs e)
@@ -100,7 +100,8 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
                     listaArea = responseArea.Value;
                     listaEmpresa = responseEmpresa.Value;
                     listaArticulo = new List<Articulo>();
-                    listaArea.ForEach(tx => {
+                    listaArea.ForEach(tx =>
+                    {
                         listaArticulo.AddRange(tx.Articuloes);
                     });
                     listaProveedor = responseProveedor.Value;
@@ -190,12 +191,15 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
                 string rutaCola = @".\private$\wmorales";
                 if (!MessageQueue.Exists(rutaCola))
                     MessageQueue.Create(rutaCola);
-
                 MessageQueue cola = new MessageQueue(rutaCola);
-                System.Messaging.Message mensaje = new System.Messaging.Message();
-                mensaje.Label = "Nueva Pedido";
-                mensaje.Body = ListaPedidos;
-                cola.Send(mensaje);
+                cola.Purge();
+                foreach (var entidad in ListaPedidos)
+                {
+                    System.Messaging.Message mensaje = new System.Messaging.Message();
+                    mensaje.Label = "Nueva Pedido";
+                    mensaje.Body = entidad;
+                    cola.Send(mensaje);
+                }
             }
             catch (Exception ex)
             {
@@ -261,7 +265,7 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
                 DataGridViewTextBoxCell txtCuenta = (DataGridViewTextBoxCell)row.Cells["Cuenta"];
 
                 if (comboCell.Value == null || comboDescripcion.Value == null || cboEmpresa.Value == null || txtCnt.Value == null || cboProveedor.Value == null
-                    ||cboBanco.Value == null || txtCuenta.Value == null)
+                    || cboBanco.Value == null || txtCuenta.Value == null)
                 {
                     btnGrabar.Visible = true;
                     MessageBox.Show("Complete todos los campos", "Aviso");
@@ -432,15 +436,15 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
             }
 
             //Modificación 25/03/2017 -- Carga automática de Banco y Numero de cuenta//
-            if(dgvArticulos.Columns[dgvArticulos.CurrentCell.ColumnIndex] == dgvArticulos.Columns["Proveedor"])
+            if (dgvArticulos.Columns[dgvArticulos.CurrentCell.ColumnIndex] == dgvArticulos.Columns["Proveedor"])
             {
                 ComboBox combo = (ComboBox)sender;
 
-               
+
                 Proveedor proveedor = combo.SelectedItem as Proveedor;
                 BANCO banco = servicio.BancoGetById(proveedor.Id_Banco).Value;
 
-                if(proveedor == null  || proveedor.Id_Banco==null)
+                if (proveedor == null || proveedor.Id_Banco == null)
                 {
                     proveedor = listaProveedor.Where(tx => tx.RazonSocial.ToUpper() == combo.Text.ToUpper()).FirstOrDefault();
                     banco = servicio.BancoGetById(proveedor.Id_Banco).Value;
@@ -549,7 +553,7 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
 
         private async void RegistrarDocumento()
         {
-            if(txtMontoDisponible.Text.Trim().Equals(string.Empty))
+            if (txtMontoDisponible.Text.Trim().Equals(string.Empty))
             {
                 MessageBox.Show("Debe ingresar el monto disponible", "Aviso");
             }
