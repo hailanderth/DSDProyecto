@@ -9,8 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MD.GA.SERVICES;
 using MD.GA.BE.Entidades;
+using MD.GA.BE;
 using System.Globalization;
 using System.Threading;
+using System.Messaging;
+using System.Web.Script.Serialization;
 
 namespace MD.GA.GUI.GA.Compras.presupuesto
 {
@@ -25,7 +28,7 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
         private NumberFormatInfo nfi = Thread.CurrentThread.CurrentCulture.NumberFormat;
         private char decSeperator;
         private String moneda = "S";
-        
+
 
         public Presupuesto()
         {
@@ -124,7 +127,7 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
                     {
                         tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
                         tb.Leave += new EventHandler(txtCantidad_Leave);
-                        
+
                     }
                 }
             }
@@ -140,7 +143,7 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
                 && (sender as TextBox).Text.IndexOf(decSeperator) > -1)
             {
                 e.Handled = true;
-            }          
+            }
         }
 
         private void txtCantidad_Leave(object sender, EventArgs e)
@@ -208,20 +211,20 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
                             combo.SelectedItem = articulo;
                             combo.Text = articulo.Descripcion;
                             cbcell.Value = articulo.Descripcion;
-                            
+
                         }
                     }
-                   
+
                 }
-           
+
                 if (articulo != null)
                 {
                     txtUnidadMedida.Value = articulo.UnidadMedida.Descripcion;
                     txtPrecio.Value = articulo.Costo;
                 }
             }
-    
-            }
+
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -256,7 +259,7 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
             documento.TipoDocumento = TipoDocumento;
             documento.UsuarioCreacion = Session.CurrentSession.Usuario.Usuario1;
             string tipoPre = "";
-            if(cboTipoPre.SelectedItem.ToString() =="Varios")
+            if (cboTipoPre.SelectedItem.ToString() == "Varios")
             {
                 tipoPre = "VAR";
             }
@@ -264,7 +267,7 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
             {
                 tipoPre = "PLA";
             }
-            if(cboTipoPre.SelectedItem.ToString() == "Lab")
+            if (cboTipoPre.SelectedItem.ToString() == "Lab")
             {
                 tipoPre = "LAB";
             }
@@ -304,7 +307,7 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
                     MessageBox.Show("Debe ingresar la cantidad", "Aviso");
                     return null;
                 }
-                
+
                 da.Empresa = empresa;
                 da.RazonSocial = empresa.RazonSocial;
                 da.RUC = empresa.RUC;
@@ -322,6 +325,8 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
                 da.NombreBanco = banco.Nombre;
                 da.RazonSocialProveedor = proveedor.RazonSocial;
                 da.TelefonoProveedor = proveedor.Telefono;
+                da.EmailProveedor = proveedor.Email_Contacto;
+
                 da.CuentaBanco = cuenta;
                 da.TipoCuentaBanco = moneda;
                 //
@@ -335,10 +340,12 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
         }
         #endregion
         #region Registrar Documento
+
         private async void RegistrarDocumento()
         {
-            
+
             Documento documento = GenerarDocumento();
+
             if (documento != null)
             {
                 HideControls();
@@ -454,5 +461,5 @@ namespace MD.GA.GUI.GA.Compras.presupuesto
             return true;
         }
 
-        }
+    }
 }

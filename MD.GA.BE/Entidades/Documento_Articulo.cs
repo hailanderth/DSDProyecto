@@ -38,7 +38,8 @@ namespace MD.GA.BE.Entidades
         public string NombreBanco { get; set; }
         public string CuentaBanco { get; set; }
         public string TipoCuentaBanco { get; set; }
-    
+
+        public string EmailProveedor { get; set; }
         public virtual Articulo Articulo { get; set; }
         public virtual Documento Documento { get; set; }
         public virtual Empresa Empresa { get; set; }

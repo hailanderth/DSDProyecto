@@ -126,6 +126,7 @@
     <Compile Include="Entidades\UsuarioValidarLogin_Result.cs">
       <DependentUpon>ModelGA.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

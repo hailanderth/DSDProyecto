@@ -104,6 +104,7 @@
     <EntitySetMapping Name="Proveedores">
       <EntityTypeMapping TypeName="Entities.Proveedor">
         <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="Email_Contacto" ColumnName="Email_Contacto" />
           <ScalarProperty Name="TipoCuenta" ColumnName="TipoCuenta" />
           <ScalarProperty Name="NumeroCuenta" ColumnName="NumeroCuenta" />
           <ScalarProperty Name="Id_Banco" ColumnName="Id_Banco" />

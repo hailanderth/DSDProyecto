@@ -125,6 +125,7 @@
     <Property Name="Id_Banco" Type="int" />
     <Property Name="NumeroCuenta" Type="varchar" MaxLength="50" />
     <Property Name="TipoCuenta" Type="char" MaxLength="1" />
+    <Property Name="Email_Contacto" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="Puesto">
     <Key>
@@ -328,6 +329,7 @@
     <Parameter Name="considerarStock" Type="bit" Mode="In" />
     <Parameter Name="bajoStock" Type="bit" Mode="In" />
     <Parameter Name="sinStock" Type="bit" Mode="In" />
+    <Parameter Name="idPuesto" Type="int" Mode="In" />
   </Function>
   <Function Name="SP_LISTARREPORENTRADA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="fecini" Type="datetime2" Mode="In" />

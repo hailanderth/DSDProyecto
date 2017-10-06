@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MD.GA.SERVICES;
 using MD.GA.BE.Entidades;
+using MD.GA.BE;
 using MD.GA.COMMOM;
 using System.Globalization;
 using System.Threading;
 using System.Reflection;
+using System.Messaging;
 
 namespace MD.GA.GUI.GA.Compras.Ord_Compra
 {
@@ -181,6 +183,53 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
             dgvArticulos.Rows.Add();
         }
 
+        private void RegistrarColaOC(List<Pedido> ListaPedidos)
+        {
+            try
+            {
+                string rutaCola = @".\private$\wmorales";
+                if (!MessageQueue.Exists(rutaCola))
+                    MessageQueue.Create(rutaCola);
+
+                MessageQueue cola = new MessageQueue(rutaCola);
+                System.Messaging.Message mensaje = new System.Messaging.Message();
+                mensaje.Label = "Nueva Pedido";
+                mensaje.Body = ListaPedidos;
+                cola.Send(mensaje);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private void ReadColaOC()
+        {
+            try
+            {
+                string rutaCola = @".\private$\wmorales";
+                if (!MessageQueue.Exists(rutaCola))
+                    MessageQueue.Create(rutaCola);
+
+                MessageQueue cola = new MessageQueue(rutaCola);
+                cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(List<Pedido>) });
+                var mensajes = cola.GetAllMessages();
+                if (mensajes != null && mensajes.Length > 0)
+                {
+                    foreach (var mensaje in mensajes)
+                    {
+                        List<Pedido> ListaPedido = (List<Pedido>)mensaje.Body;
+                    }
+                }
+                cola.Purge();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         private Documento GenerarDocumento()
         {
             Documento objDocumento = new Documento();
@@ -197,11 +246,11 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
                 objDocumento.FormaPago = "B";
 
             List<Documento_Articulo> listaDocumentoArticulo = new List<Documento_Articulo>();
-
+            List<Pedido> ListaPedidos = new List<Pedido>();
             foreach (DataGridViewRow row in dgvArticulos.Rows)
             {
                 Documento_Articulo da = new Documento_Articulo();
-
+                Pedido oPedido = new Pedido();
                 DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)row.Cells["CodArea"];
                 DataGridViewComboBoxCell comboDescripcion = (DataGridViewComboBoxCell)row.Cells["Descripcion"];
                 DataGridViewComboBoxCell cboEmpresa = (DataGridViewComboBoxCell)row.Cells["RazonSocial"];
@@ -253,7 +302,20 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
                 da.NombreBanco = banco.Nombre;
                 da.CuentaBanco = proveedor.NumeroCuenta;
                 da.TipoCuentaBanco = da.TipoCuentaBanco;
+                da.EmailProveedor = proveedor.Email_Contacto;
                 listaDocumentoArticulo.Add(da);
+
+                //Pedido
+                oPedido.Cantidad = Cantidad;
+                oPedido.DescripcionArticulo = articulo.Descripcion;
+                oPedido.EmailProveedor = proveedor.Email_Contacto;
+                oPedido.Importe = Decimal.Parse(Importe.ToString()); ;
+                oPedido.PrecioUnitario = precioUnitario;
+                oPedido.RazonSocial = proveedor.RazonSocial;
+                oPedido.RUC = empresa.RUC;
+                oPedido.UnidadMedida = articulo.UnidadMedida.Descripcion;
+                ListaPedidos.Add(oPedido);
+
             }
             objDocumento.Moneda = moneda;
             objDocumento.MontoTotal = Decimal.Parse(lblMonto.Text.ToString());
@@ -262,6 +324,10 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
             objDocumento.MontoDisponible = Convert.ToDecimal(txtMontoDisponible.Text.ToString().Trim());
             objDocumento.FechaCreacion = DateTime.Now;
             objDocumento.Estado = "A";
+
+            //Registrar Cola
+            RegistrarColaOC(ListaPedidos);
+
             return objDocumento;
         }
 
@@ -374,9 +440,10 @@ namespace MD.GA.GUI.GA.Compras.Ord_Compra
                 Proveedor proveedor = combo.SelectedItem as Proveedor;
                 BANCO banco = servicio.BancoGetById(proveedor.Id_Banco).Value;
 
-                if(proveedor == null)
+                if(proveedor == null  || proveedor.Id_Banco==null)
                 {
                     proveedor = listaProveedor.Where(tx => tx.RazonSocial.ToUpper() == combo.Text.ToUpper()).FirstOrDefault();
+                    banco = servicio.BancoGetById(proveedor.Id_Banco).Value;
                     cbProveedor.Value = proveedor.RazonSocial;
                     combo.Text = proveedor.RazonSocial;
                 }

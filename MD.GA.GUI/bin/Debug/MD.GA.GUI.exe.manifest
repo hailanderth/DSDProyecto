@@ -72,14 +72,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.BE.dll" size="35328">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.BE.dll" size="36864">
       <assemblyIdentity name="MD.GA.BE" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3NfOT7Py+731tY3zSXi9bR7W1KJMNsZrXHb5EswmBFY=</dsig:DigestValue>
+        <dsig:DigestValue>jmu7gdB58cvNxW1CCPzAnENkDCdaWyIff6fhMFVz/6Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,7 +91,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CTwLbS3xYbf/MK+J3pUni+7FnJ+9sCDf+oGaVRYY/wI=</dsig:DigestValue>
+        <dsig:DigestValue>fnxVv269XOlIY9RNfssgXcoCffuzfpNdUmqA8jKomEQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,31 +103,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TULP8xNV4Qfj5VBVOg31FMK6rnHQ7LZIikb0RDIHBrs=</dsig:DigestValue>
+        <dsig:DigestValue>WAfMkJPLgpJz3qSgQeTH7TT92WclXCQjTfZXiRrDnDU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.DA.dll" size="130048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.DA.dll" size="130560">
       <assemblyIdentity name="MD.GA.DA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JPCFC0L8VBr8OL+x6HFuxchwOQIG5mfOMdZ4sGIWiCU=</dsig:DigestValue>
+        <dsig:DigestValue>sq9IjCyRzkp+zMaCPaCAAt2encGH/iT8KcaVr7zBTXw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.GUI.exe" size="782848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.GUI.exe" size="784384">
       <assemblyIdentity name="MD.GA.GUI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>L+kwr+dFEQOicJxVGUTrxzfy/bcEO4CrA9f/BtDHHZY=</dsig:DigestValue>
+        <dsig:DigestValue>C6qtb0i770Pg3vOjxu7QfYcQBgaHQhB7DKSao7CpAb8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -139,7 +139,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xNZAq/V8wwBie7zVgAaMUerkdz6T4FSL0NN9/keqBvI=</dsig:DigestValue>
+        <dsig:DigestValue>4SakmmJoYMeyhUt1KMoljg0IXbjE7SXLGx3yRL7Cluw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -191,13 +191,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="MD.GA.GUI.exe.config" size="2915">
+  <file name="MD.GA.GUI.exe.config" size="2452">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HhsI3GiuG7EGBLbyp/MLJ2GgU/Iwzchd41f2HNSA0Zw=</dsig:DigestValue>
+      <dsig:DigestValue>cFxuOCN3eIU+MD70ehvZnx/NdcKjvXDoqgJ1zafDxSA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="md_icon (1).ico" size="32038">

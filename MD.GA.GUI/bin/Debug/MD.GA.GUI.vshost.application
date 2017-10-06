@@ -4,7 +4,7 @@
   <description asmv2:publisher="MD.GA.GUI" asmv2:product="MD.GA.GUI" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" minimumRequiredVersion="1.0.0.11" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.6" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
     <dependentAssembly dependencyType="install" codebase="MD.GA.GUI.exe.manifest" size="11811">
@@ -14,7 +14,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1mkEcKhJ7Mk9+hQYaA4jIV13DV4AOSQ8SU2sArrYp98=</dsig:DigestValue>
+        <dsig:DigestValue>atBSjJaiArHljijShWxxsaBGETue+dGPCh9FLxMQe5g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

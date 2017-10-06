@@ -126,6 +126,7 @@
     <Property Name="NumeroCuenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="TipoCuenta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="BANCO" Relationship="Entities.FK_BANCO" FromRole="Proveedor" ToRole="BANCO" />
+    <Property Name="Email_Contacto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Puesto">
     <Key>
@@ -399,6 +400,7 @@
       <Parameter Name="considerarStock" Mode="In" Type="Boolean" />
       <Parameter Name="bajoStock" Mode="In" Type="Boolean" />
       <Parameter Name="sinStock" Mode="In" Type="Boolean" />
+      <Parameter Name="idPuesto" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="SP_DELETE_DOCUMENT_ARTICLE">
       <Parameter Name="NUMID" Mode="In" Type="Int32" />

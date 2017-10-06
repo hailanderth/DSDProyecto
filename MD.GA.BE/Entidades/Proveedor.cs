@@ -34,7 +34,7 @@ namespace MD.GA.BE.Entidades
         public Nullable<int> Id_Banco { get; set; }
         public string NumeroCuenta { get; set; }
         public string TipoCuenta { get; set; }
-    
+        public string Email_Contacto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Documento_Articulo> Documento_Articulo { get; set; }
         public virtual BANCO BANCO { get; set; }
