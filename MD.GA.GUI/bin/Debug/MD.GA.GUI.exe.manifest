@@ -15,16 +15,16 @@
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
-          Opciones del manifiesto de Control de cuentas de usuario
-          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el 
-          nodo requestedExecutionLevel por alguno de los siguientes.
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         Si desea usar la virtualización de archivos y del Registro para la 
-         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -72,14 +72,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.BE.dll" size="36864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.BE.dll" size="38400">
       <assemblyIdentity name="MD.GA.BE" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Be5qvttmzng4X6OcLSjJjEq9200Ob5L6txlb59SE97o=</dsig:DigestValue>
+        <dsig:DigestValue>DXKCF4HmWF0U+DJMGFXgsrBM/HKdorjDGa40L/73uCY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,7 +91,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iO0x7opMj3HC7Hi3jc3c1pWj6QUcNqGDvLZ5LHYPgh8=</dsig:DigestValue>
+        <dsig:DigestValue>tnzR0KyAbM7iNqnXanIasHbHLTcoVVB6U7+e4rJvWKQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,7 +103,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KCBi9u/u43GoIRw7+DtEpU6EPISnvuvi+22dq9+D+jU=</dsig:DigestValue>
+        <dsig:DigestValue>0/P6+Yfq5GTd75WaE3yiaDCk/P7PsB0I6j0EIusnvV0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -115,31 +115,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+zP9WqLQbLykdkNpEgmnuzp4aZ1eAMDUltTpp3jHrkQ=</dsig:DigestValue>
+        <dsig:DigestValue>N6K4Sap4cqDJJhOSvgr3ZoaCJEplItIRjeKefiz38NA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.GUI.exe" size="784384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.GUI.exe" size="783872">
       <assemblyIdentity name="MD.GA.GUI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tTmZz69QN7N48OwqBFeKxESvox21yKt4sInuVf5DUqQ=</dsig:DigestValue>
+        <dsig:DigestValue>XOPtfAC/k7oMHiifo0rWZyeh8yrQMQ2rginSDl1CJOg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.SERVICES.dll" size="67072">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MD.GA.SERVICES.dll" size="66560">
       <assemblyIdentity name="MD.GA.SERVICES" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/Iu+An+974D3Mzaly6LYXeau/O1vGlmZ2sx1AIPEHuw=</dsig:DigestValue>
+        <dsig:DigestValue>Tjti+q0/x8F2aXrF2Y2WrM0vplfujQL3qHKQTI5b98w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -191,13 +191,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="MD.GA.GUI.exe.config" size="2452">
+  <file name="MD.GA.GUI.exe.config" size="2442">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cFxuOCN3eIU+MD70ehvZnx/NdcKjvXDoqgJ1zafDxSA=</dsig:DigestValue>
+      <dsig:DigestValue>Et9xvh6enWNKXbsJr+e/+AhjElXEkBdBD/xQSRPu1Wk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="md_icon (1).ico" size="32038">

@@ -28,3 +28,21 @@ E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.SER
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.SERVICES\obj\Debug\MD.GA.SERVICES.csprojResolveAssemblyReference.cache
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.SERVICES\obj\Debug\MD.GA.SERVICES.dll
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.SERVICES\obj\Debug\MD.GA.SERVICES.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.SERVICES.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.SERVICES.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.BE.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.BL.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.COMMOM.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.DA.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\EntityFramework.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.BE.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.BE.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.BL.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.COMMOM.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.DA.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\MD.GA.DA.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\bin\Debug\EntityFramework.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\obj\Debug\MD.GA.SERVICES.csprojResolveAssemblyReference.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\obj\Debug\MD.GA.SERVICES.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\obj\Debug\MD.GA.SERVICES.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.SERVICES\obj\Debug\MD.GA.SERVICES.pdb

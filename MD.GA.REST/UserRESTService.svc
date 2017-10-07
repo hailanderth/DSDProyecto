@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MD.GA.REST.UserRESTService" CodeBehind="UserRESTService.svc.cs" Factory="System.ServiceModel.Activation.WebServiceHostFactory"%>

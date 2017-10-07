@@ -22,3 +22,17 @@ E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.DA\
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.DA\obj\Debug\MD.GA.DA.csprojResolveAssemblyReference.cache
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.DA\obj\Debug\MD.GA.DA.dll
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.DA\obj\Debug\MD.GA.DA.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\MD.GA.DA.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\MD.GA.DA.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\MD.GA.DA.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\EntityFramework.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\EntityFramework.SqlServer.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\MD.GA.BE.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\MD.GA.BE.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\MD.GA.BE.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\EntityFramework.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\bin\Debug\EntityFramework.SqlServer.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\obj\Debug\MD.GA.DA.csprojResolveAssemblyReference.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\obj\Debug\MD.GA.DA.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\obj\Debug\MD.GA.DA.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.DA\obj\Debug\MD.GA.DA.pdb

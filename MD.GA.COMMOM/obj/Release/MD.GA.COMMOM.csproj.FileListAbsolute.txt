@@ -1,0 +1,6 @@
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\bin\Release\MD.GA.COMMOM.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\bin\Release\MD.GA.COMMOM.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\obj\Release\MD.GA.COMMOM.csprojResolveAssemblyReference.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\obj\Release\MD.GA.COMMOM.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\obj\Release\MD.GA.COMMOM.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\obj\Release\MD.GA.COMMOM.pdb

@@ -1,0 +1,16 @@
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.BL.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.BL.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.BE.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.COMMOM.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.DA.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\EntityFramework.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.BE.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.BE.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.COMMOM.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.DA.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\MD.GA.DA.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\bin\Release\EntityFramework.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\obj\Release\MD.GA.BL.csprojResolveAssemblyReference.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\obj\Release\MD.GA.BL.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\obj\Release\MD.GA.BL.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BL\obj\Release\MD.GA.BL.pdb

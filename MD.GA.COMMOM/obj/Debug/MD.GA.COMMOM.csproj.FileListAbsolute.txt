@@ -7,3 +7,8 @@ E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.COM
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.COMMOM\obj\Debug\MD.GA.COMMOM.dll
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.COMMOM\obj\Debug\MD.GA.COMMOM.pdb
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.COMMOM\obj\Debug\MD.GA.COMMOM.csprojResolveAssemblyReference.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\bin\Debug\MD.GA.COMMOM.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\bin\Debug\MD.GA.COMMOM.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\obj\Debug\MD.GA.COMMOM.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\obj\Debug\MD.GA.COMMOM.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.COMMOM\obj\Debug\MD.GA.COMMOM.pdb

@@ -11,5 +11,7 @@ namespace MD.GA.BE.Entidades
         public string NombreApellidos {
             get { return this.Apellidos + " " + this.Nombres; }
         }
+
+
     }
 }

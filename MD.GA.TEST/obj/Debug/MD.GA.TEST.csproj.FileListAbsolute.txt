@@ -38,3 +38,25 @@ E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.TES
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.TEST\bin\Debug\EntityFramework.xml
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.TEST\bin\Debug\EntityFramework.SqlServer.xml
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.TEST\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.TEST.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.TEST.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.TEST.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\EntityFramework.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\EntityFramework.SqlServer.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.BE.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.BL.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.COMMOM.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.DA.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.BE.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.BE.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.BL.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.COMMOM.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.DA.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\MD.GA.DA.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\EntityFramework.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\bin\Debug\EntityFramework.SqlServer.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\obj\Debug\MD.GA.TEST.csprojResolveAssemblyReference.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\obj\Debug\MD.GA.TEST.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\obj\Debug\MD.GA.TEST.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.TEST\obj\Debug\MD.GA.TEST.pdb

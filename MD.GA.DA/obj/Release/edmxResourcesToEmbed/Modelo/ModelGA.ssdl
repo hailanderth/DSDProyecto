@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id_Area" />
+    </Key>
+    <Property Name="Id_Area" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodArea" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NombreArea" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="Id_Articulo" />
+    </Key>
+    <Property Name="Id_Articulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Stock" Type="float" Nullable="false" />
+    <Property Name="Moneda" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Costo" Type="money" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Id_Area" Type="int" Nullable="false" />
+    <Property Name="Id_UnidadMedida" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CantidadMinima" Type="float" />
+    <Property Name="Marca" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="BANCO">
+    <Key>
+      <PropertyRef Name="Id_Banco" />
+    </Key>
+    <Property Name="Id_Banco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="Id_Documento" />
+    </Key>
+    <Property Name="Id_Documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoDocumento" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="NroDocumento" Type="int" Nullable="false" />
+    <Property Name="Id_Sede" Type="int" />
+    <Property Name="Id_DocumentoOrigen" Type="int" />
+    <Property Name="FormaPago" Type="char" MaxLength="1" />
+    <Property Name="Moneda" Type="char" MaxLength="1" />
+    <Property Name="MontoTotal" Type="money" />
+    <Property Name="Encargado" Type="varchar" MaxLength="20" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TipoPresupuesto" Type="char" MaxLength="3" />
+    <Property Name="MontoDisponible" Type="money" />
+  </EntityType>
+  <EntityType Name="Documento_Articulo">
+    <Key>
+      <PropertyRef Name="Id_DocumentoArticulo" />
+    </Key>
+    <Property Name="Id_DocumentoArticulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Articulo" Type="int" Nullable="false" />
+    <Property Name="Id_Documento" Type="int" Nullable="false" />
+    <Property Name="Id_Empresa" Type="int" />
+    <Property Name="RazonSocial" Type="varchar" MaxLength="100" />
+    <Property Name="RUC" Type="varchar" MaxLength="11" />
+    <Property Name="DescripcionArticulo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodArea" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="UnidadMedida" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cantidad" Type="float" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="money" />
+    <Property Name="Importe" Type="money" />
+    <Property Name="Id_Proveedor" Type="int" />
+    <Property Name="RazonSocialProveedor" Type="varchar" MaxLength="100" />
+    <Property Name="RUCProveedor" Type="varchar" MaxLength="11" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="NombreArea" Type="varchar" MaxLength="50" />
+    <Property Name="TelefonoProveedor" Type="varchar" MaxLength="10" />
+    <Property Name="NombreBanco" Type="varchar" MaxLength="100" />
+    <Property Name="CuentaBanco" Type="varchar" MaxLength="50" />
+    <Property Name="TipoCuentaBanco" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id_Empresa" />
+    </Key>
+    <Property Name="Id_Empresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="RazonSocial" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Id_Proveedor" />
+    </Key>
+    <Property Name="Id_Proveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RazonSocial" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" />
+    <Property Name="Telefono" Type="varchar" MaxLength="10" />
+    <Property Name="Contact" Type="varchar" MaxLength="50" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Id_Banco" Type="int" />
+    <Property Name="NumeroCuenta" Type="varchar" MaxLength="50" />
+    <Property Name="TipoCuenta" Type="char" MaxLength="1" />
+    <Property Name="Email_Contacto" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Puesto">
+    <Key>
+      <PropertyRef Name="Id_Puesto" />
+    </Key>
+    <Property Name="Id_Puesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombrePuesto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sede">
+    <Key>
+      <PropertyRef Name="Id_Sede" />
+    </Key>
+    <Property Name="Id_Sede" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreSede" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="UnidadMedida">
+    <Key>
+      <PropertyRef Name="Id_UnidadMedida" />
+    </Key>
+    <Property Name="Id_UnidadMedida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaCreacion" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+    <Property Name="Id_Puesto" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Articulo_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id_Area" />
+      </Principal>
+      <Dependent Role="Articulo">
+        <PropertyRef Name="Id_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Articulo_UnidadMedida">
+    <End Role="UnidadMedida" Type="Self.UnidadMedida" Multiplicity="1" />
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnidadMedida">
+        <PropertyRef Name="Id_UnidadMedida" />
+      </Principal>
+      <Dependent Role="Articulo">
+        <PropertyRef Name="Id_UnidadMedida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BANCO">
+    <End Role="BANCO" Type="Self.BANCO" Multiplicity="0..1" />
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANCO">
+        <PropertyRef Name="Id_Banco" />
+      </Principal>
+      <Dependent Role="Proveedor">
+        <PropertyRef Name="Id_Banco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_Sede">
+    <End Role="Sede" Type="Self.Sede" Multiplicity="0..1" />
+    <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sede">
+        <PropertyRef Name="Id_Sede" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="Id_Sede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoArticulo_Articulo">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="1" />
+    <End Role="Documento_Articulo" Type="Self.Documento_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="Id_Articulo" />
+      </Principal>
+      <Dependent Role="Documento_Articulo">
+        <PropertyRef Name="Id_Articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoArticulo_Documento">
+    <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+    <End Role="Documento_Articulo" Type="Self.Documento_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="Id_Documento" />
+      </Principal>
+      <Dependent Role="Documento_Articulo">
+        <PropertyRef Name="Id_Documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoArticulo_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Documento_Articulo" Type="Self.Documento_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id_Empresa" />
+      </Principal>
+      <Dependent Role="Documento_Articulo">
+        <PropertyRef Name="Id_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoArticulo_Proveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+    <End Role="Documento_Articulo" Type="Self.Documento_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="Id_Proveedor" />
+      </Principal>
+      <Dependent Role="Documento_Articulo">
+        <PropertyRef Name="Id_Proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Puesto">
+    <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puesto">
+        <PropertyRef Name="Id_Puesto" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Id_Puesto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ArticuloAumentarStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idArticulo" Type="int" Mode="In" />
+    <Parameter Name="cantidad" Type="float" Mode="In" />
+    <Parameter Name="bit" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="ArticuloReducirStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idArticulo" Type="int" Mode="In" />
+    <Parameter Name="cantidad" Type="float" Mode="In" />
+    <Parameter Name="bit" Type="bit" Mode="InOut" />
+  </Function>
+  <Function Name="DocumentoGetSiguienteNro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipoDocumento" Type="char" Mode="In" />
+    <Parameter Name="idSede" Type="int" Mode="In" />
+    <Parameter Name="tipoPre" Type="char" Mode="In" />
+    <Parameter Name="nroDocumento" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SP_DELETE_DOCUMENT_ARTICLE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NUMID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DESENCRIPTARPASSB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLAVE" Type="varchar" Mode="In" />
+    <Parameter Name="PASS" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="SP_ENCRIPTARPASSB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLAVE" Type="varchar" Mode="In" />
+    <Parameter Name="PASS" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="SP_GetAllAreaByEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetAllArticuloByEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetAllEmpresaByEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetAllProveedorByEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetAllSedeByEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GetAllUnidadMedidaByEstado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_LISTAR_ARTICULOS_BY_STOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idArea" Type="int" Mode="In" />
+    <Parameter Name="nombreArticulo" Type="varchar" Mode="In" />
+    <Parameter Name="considerarStock" Type="bit" Mode="In" />
+    <Parameter Name="bajoStock" Type="bit" Mode="In" />
+    <Parameter Name="sinStock" Type="bit" Mode="In" />
+    <Parameter Name="idPuesto" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTARREPORENTRADA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecini" Type="datetime2" Mode="In" />
+    <Parameter Name="fecfin" Type="datetime2" Mode="In" />
+    <Parameter Name="area" Type="int" Mode="In" />
+    <Parameter Name="articulo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_LISTARREPORSALIDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fecini" Type="datetime2" Mode="In" />
+    <Parameter Name="fecfin" Type="datetime2" Mode="In" />
+    <Parameter Name="area" Type="int" Mode="In" />
+    <Parameter Name="articulo" Type="int" Mode="In" />
+    <Parameter Name="sede" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UsuarioValidarLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="EntitiesStoreContainer">
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Articulo" EntityType="Self.Articulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BANCO" EntityType="Self.BANCO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento_Articulo" EntityType="Self.Documento_Articulo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Puesto" EntityType="Self.Puesto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sede" EntityType="Self.Sede" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UnidadMedida" EntityType="Self.UnidadMedida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Articulo_Area" Association="Self.FK_Articulo_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Articulo" EntitySet="Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Articulo_UnidadMedida" Association="Self.FK_Articulo_UnidadMedida">
+      <End Role="UnidadMedida" EntitySet="UnidadMedida" />
+      <End Role="Articulo" EntitySet="Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BANCO" Association="Self.FK_BANCO">
+      <End Role="BANCO" EntitySet="BANCO" />
+      <End Role="Proveedor" EntitySet="Proveedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_Sede" Association="Self.FK_Documento_Sede">
+      <End Role="Sede" EntitySet="Sede" />
+      <End Role="Documento" EntitySet="Documento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoArticulo_Articulo" Association="Self.FK_DocumentoArticulo_Articulo">
+      <End Role="Articulo" EntitySet="Articulo" />
+      <End Role="Documento_Articulo" EntitySet="Documento_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoArticulo_Documento" Association="Self.FK_DocumentoArticulo_Documento">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="Documento_Articulo" EntitySet="Documento_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoArticulo_Empresa" Association="Self.FK_DocumentoArticulo_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Documento_Articulo" EntitySet="Documento_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoArticulo_Proveedor" Association="Self.FK_DocumentoArticulo_Proveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Documento_Articulo" EntitySet="Documento_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Puesto" Association="Self.FK_Usuario_Puesto">
+      <End Role="Puesto" EntitySet="Puesto" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

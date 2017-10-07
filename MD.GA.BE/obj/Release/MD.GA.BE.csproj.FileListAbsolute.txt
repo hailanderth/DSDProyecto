@@ -1,0 +1,11 @@
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Release\MD.GA.BE.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Release\MD.GA.BE.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Release\MD.GA.BE.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Release\EntityFramework.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Release\EntityFramework.SqlServer.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Release\EntityFramework.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Release\EntityFramework.SqlServer.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\obj\Release\MD.GA.BE.csprojResolveAssemblyReference.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\obj\Release\MD.GA.BE.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\obj\Release\MD.GA.BE.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\obj\Release\MD.GA.BE.pdb

@@ -6,3 +6,12 @@ E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.WIN
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.WINSERVICES\bin\Debug\MD.GA.WINSERVICES.pdb
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.WINSERVICES\obj\Debug\MD.GA.WINSERVICES.exe
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.WINSERVICES\obj\Debug\MD.GA.WINSERVICES.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\bin\Debug\MD.GA.WINSERVICES.exe.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\bin\Debug\MD.GA.WINSERVICES.exe
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\bin\Debug\MD.GA.WINSERVICES.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\obj\Debug\MD.GA.WINSERVICES.MedicalCompras.resources
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\obj\Debug\MD.GA.WINSERVICES.csproj.GenerateResource.Cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\obj\Debug\MD.GA.WINSERVICES.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\obj\Debug\MD.GA.WINSERVICES.exe
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\obj\Debug\MD.GA.WINSERVICES.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.WINSERVICES\obj\Debug\MD.GA.WINSERVICES.csprojResolveAssemblyReference.cache

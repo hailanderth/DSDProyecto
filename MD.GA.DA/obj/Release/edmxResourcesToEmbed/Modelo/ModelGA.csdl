@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id_Area" />
+    </Key>
+    <Property Name="Id_Area" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodArea" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NombreArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Articuloes" Relationship="Self.FK_Articulo_Area" FromRole="Area" ToRole="Articulo" />
+  </EntityType>
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="Id_Articulo" />
+    </Key>
+    <Property Name="Id_Articulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Stock" Type="Double" Nullable="false" />
+    <Property Name="Moneda" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Costo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Id_Area" Type="Int32" Nullable="false" />
+    <Property Name="Id_UnidadMedida" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Area" Relationship="Self.FK_Articulo_Area" FromRole="Articulo" ToRole="Area" />
+    <NavigationProperty Name="UnidadMedida" Relationship="Self.FK_Articulo_UnidadMedida" FromRole="Articulo" ToRole="UnidadMedida" />
+    <NavigationProperty Name="Documento_Articulo" Relationship="Self.FK_DocumentoArticulo_Articulo" FromRole="Articulo" ToRole="Documento_Articulo" />
+    <Property Name="CantidadMinima" Type="Double" />
+    <Property Name="Marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="Id_Documento" />
+    </Key>
+    <Property Name="Id_Documento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoDocumento" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="NroDocumento" Type="Int32" Nullable="false" />
+    <Property Name="Id_Sede" Type="Int32" />
+    <Property Name="Id_DocumentoOrigen" Type="Int32" />
+    <Property Name="FormaPago" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Moneda" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MontoTotal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Encargado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Sede" Relationship="Self.FK_Documento_Sede" FromRole="Documento" ToRole="Sede" />
+    <NavigationProperty Name="Documento_Articulo" Relationship="Self.FK_DocumentoArticulo_Documento" FromRole="Documento" ToRole="Documento_Articulo" />
+    <Property Name="TipoPresupuesto" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="MontoDisponible" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Documento_Articulo">
+    <Key>
+      <PropertyRef Name="Id_DocumentoArticulo" />
+    </Key>
+    <Property Name="Id_DocumentoArticulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Articulo" Type="Int32" Nullable="false" />
+    <Property Name="Id_Documento" Type="Int32" Nullable="false" />
+    <Property Name="Id_Empresa" Type="Int32" />
+    <Property Name="RazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="DescripcionArticulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodArea" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UnidadMedida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cantidad" Type="Double" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Importe" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Id_Proveedor" Type="Int32" />
+    <Property Name="RazonSocialProveedor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RUCProveedor" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="Articulo" Relationship="Self.FK_DocumentoArticulo_Articulo" FromRole="Documento_Articulo" ToRole="Articulo" />
+    <NavigationProperty Name="Documento" Relationship="Self.FK_DocumentoArticulo_Documento" FromRole="Documento_Articulo" ToRole="Documento" />
+    <NavigationProperty Name="Empresa" Relationship="Self.FK_DocumentoArticulo_Empresa" FromRole="Documento_Articulo" ToRole="Empresa" />
+    <NavigationProperty Name="Proveedor" Relationship="Self.FK_DocumentoArticulo_Proveedor" FromRole="Documento_Articulo" ToRole="Proveedor" />
+    <Property Name="NombreArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TelefonoProveedor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NombreBanco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CuentaBanco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoCuentaBanco" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id_Empresa" />
+    </Key>
+    <Property Name="Id_Empresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Documento_Articulo" Relationship="Self.FK_DocumentoArticulo_Empresa" FromRole="Empresa" ToRole="Documento_Articulo" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Id_Proveedor" />
+    </Key>
+    <Property Name="Id_Proveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Documento_Articulo" Relationship="Self.FK_DocumentoArticulo_Proveedor" FromRole="Proveedor" ToRole="Documento_Articulo" />
+    <Property Name="Id_Banco" Type="Int32" />
+    <Property Name="NumeroCuenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TipoCuenta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="BANCO" Relationship="Entities.FK_BANCO" FromRole="Proveedor" ToRole="BANCO" />
+    <Property Name="Email_Contacto" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Puesto">
+    <Key>
+      <PropertyRef Name="Id_Puesto" />
+    </Key>
+    <Property Name="Id_Puesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombrePuesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Puesto" FromRole="Puesto" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Sede">
+    <Key>
+      <PropertyRef Name="Id_Sede" />
+    </Key>
+    <Property Name="Id_Sede" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreSede" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Documentoes" Relationship="Self.FK_Documento_Sede" FromRole="Sede" ToRole="Documento" />
+    <Property Name="TELEFONO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UnidadMedida">
+    <Key>
+      <PropertyRef Name="Id_UnidadMedida" />
+    </Key>
+    <Property Name="Id_UnidadMedida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Articuloes" Relationship="Self.FK_Articulo_UnidadMedida" FromRole="UnidadMedida" ToRole="Articulo" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Usuario1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Id_Puesto" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Puesto" Relationship="Self.FK_Usuario_Puesto" FromRole="Usuario" ToRole="Puesto" />
+  </EntityType>
+  <Association Name="FK_Articulo_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id_Area" />
+      </Principal>
+      <Dependent Role="Articulo">
+        <PropertyRef Name="Id_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Articulo_UnidadMedida">
+    <End Role="UnidadMedida" Type="Self.UnidadMedida" Multiplicity="1" />
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnidadMedida">
+        <PropertyRef Name="Id_UnidadMedida" />
+      </Principal>
+      <Dependent Role="Articulo">
+        <PropertyRef Name="Id_UnidadMedida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoArticulo_Articulo">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="1" />
+    <End Role="Documento_Articulo" Type="Self.Documento_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="Id_Articulo" />
+      </Principal>
+      <Dependent Role="Documento_Articulo">
+        <PropertyRef Name="Id_Articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documento_Sede">
+    <End Role="Sede" Type="Self.Sede" Multiplicity="0..1" />
+    <End Role="Documento" Type="Self.Documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sede">
+        <PropertyRef Name="Id_Sede" />
+      </Principal>
+      <Dependent Role="Documento">
+        <PropertyRef Name="Id_Sede" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoArticulo_Documento">
+    <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+    <End Role="Documento_Articulo" Type="Self.Documento_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="Id_Documento" />
+      </Principal>
+      <Dependent Role="Documento_Articulo">
+        <PropertyRef Name="Id_Documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoArticulo_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Documento_Articulo" Type="Self.Documento_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id_Empresa" />
+      </Principal>
+      <Dependent Role="Documento_Articulo">
+        <PropertyRef Name="Id_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoArticulo_Proveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+    <End Role="Documento_Articulo" Type="Self.Documento_Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="Id_Proveedor" />
+      </Principal>
+      <Dependent Role="Documento_Articulo">
+        <PropertyRef Name="Id_Proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Puesto">
+    <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puesto">
+        <PropertyRef Name="Id_Puesto" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Id_Puesto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GestionAlmacen" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Areas" EntityType="Self.Area" />
+    <EntitySet Name="Articulos" EntityType="Self.Articulo" />
+    <EntitySet Name="Documentos" EntityType="Self.Documento" />
+    <EntitySet Name="Documento_Articulo" EntityType="Self.Documento_Articulo" />
+    <EntitySet Name="Empresas" EntityType="Self.Empresa" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedor" />
+    <EntitySet Name="Puestos" EntityType="Self.Puesto" />
+    <EntitySet Name="Sedes" EntityType="Self.Sede" />
+    <EntitySet Name="UnidadMedidas" EntityType="Self.UnidadMedida" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Articulo_Area" Association="Self.FK_Articulo_Area">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="Articulo" EntitySet="Articulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Articulo_UnidadMedida" Association="Self.FK_Articulo_UnidadMedida">
+      <End Role="UnidadMedida" EntitySet="UnidadMedidas" />
+      <End Role="Articulo" EntitySet="Articulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoArticulo_Articulo" Association="Self.FK_DocumentoArticulo_Articulo">
+      <End Role="Articulo" EntitySet="Articulos" />
+      <End Role="Documento_Articulo" EntitySet="Documento_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documento_Sede" Association="Self.FK_Documento_Sede">
+      <End Role="Sede" EntitySet="Sedes" />
+      <End Role="Documento" EntitySet="Documentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoArticulo_Documento" Association="Self.FK_DocumentoArticulo_Documento">
+      <End Role="Documento" EntitySet="Documentos" />
+      <End Role="Documento_Articulo" EntitySet="Documento_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoArticulo_Empresa" Association="Self.FK_DocumentoArticulo_Empresa">
+      <End Role="Empresa" EntitySet="Empresas" />
+      <End Role="Documento_Articulo" EntitySet="Documento_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoArticulo_Proveedor" Association="Self.FK_DocumentoArticulo_Proveedor">
+      <End Role="Proveedor" EntitySet="Proveedores" />
+      <End Role="Documento_Articulo" EntitySet="Documento_Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Puesto" Association="Self.FK_Usuario_Puesto">
+      <End Role="Puesto" EntitySet="Puestos" />
+      <End Role="Usuario" EntitySet="Usuarios" />
+    </AssociationSet>
+    <FunctionImport Name="ArticuloAumentarStock">
+      <Parameter Name="idArticulo" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad" Mode="In" Type="Double" />
+      <Parameter Name="bit" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="ArticuloReducirStock">
+      <Parameter Name="idArticulo" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad" Mode="In" Type="Double" />
+      <Parameter Name="bit" Mode="InOut" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="DocumentoGetSiguienteNro">
+      <Parameter Name="tipoDocumento" Mode="In" Type="String" />
+      <Parameter Name="idSede" Mode="In" Type="Int32" />
+      <Parameter Name="tipoPre" Mode="In" Type="String" />
+      <Parameter Name="nroDocumento" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UsuarioValidarLogin" EntitySet="Usuarios" ReturnType="Collection(Entities.Usuario)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllAreaByEstado" EntitySet="Areas" ReturnType="Collection(Entities.Area)" />
+    <FunctionImport Name="GetAllArticuloByEstado" EntitySet="Articulos" ReturnType="Collection(Entities.Articulo)" />
+    <FunctionImport Name="GetAllEmpresaByEstado" EntitySet="Empresas" ReturnType="Collection(Entities.Empresa)" />
+    <FunctionImport Name="GetAllProveedorByEstado" EntitySet="Proveedores" ReturnType="Collection(Entities.Proveedor)" />
+    <FunctionImport Name="GetAllSedeByEstado" EntitySet="Sedes" ReturnType="Collection(Entities.Sede)" />
+    <FunctionImport Name="GetAllUnidadMedidaByEstado" EntitySet="UnidadMedidas" ReturnType="Collection(Entities.UnidadMedida)" />
+    <FunctionImport Name="SP_ENCRIPTARPASSB">
+      <Parameter Name="CLAVE" Mode="In" Type="String" />
+      <Parameter Name="PASS" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="EncriptarPass">
+      <Parameter Name="CLAVE" Mode="In" Type="String" />
+      <Parameter Name="PASS" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DESENCRIPTARPASSB">
+      <Parameter Name="CLAVE" Mode="In" Type="String" />
+      <Parameter Name="PASS" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DesencriptarPass">
+      <Parameter Name="CLAVE" Mode="In" Type="String" />
+      <Parameter Name="PASS" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LISTARREPORSALIDA" ReturnType="Collection(Entities.SP_LISTARREPORSALIDA_Result1)">
+      <Parameter Name="fecini" Mode="In" Type="DateTime" />
+      <Parameter Name="fecfin" Mode="In" Type="DateTime" />
+      <Parameter Name="area" Mode="In" Type="Int32" />
+      <Parameter Name="articulo" Mode="In" Type="Int32" />
+      <Parameter Name="sede" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ListaEstadSalida" ReturnType="Collection(Entities.ListaEstadSalida_Resultado)">
+      <Parameter Name="fecini" Mode="In" Type="DateTime" />
+      <Parameter Name="fecfin" Mode="In" Type="DateTime" />
+      <Parameter Name="area" Mode="In" Type="Int32" />
+      <Parameter Name="articulo" Mode="In" Type="Int32" />
+      <Parameter Name="sede" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LISTARREPORENTRADA" ReturnType="Collection(Entities.SP_LISTARREPORENTRADA_Result)">
+      <Parameter Name="fecini" Mode="In" Type="DateTime" />
+      <Parameter Name="fecfin" Mode="In" Type="DateTime" />
+      <Parameter Name="area" Mode="In" Type="Int32" />
+      <Parameter Name="articulo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ListaEstIngreso" ReturnType="Collection(Entities.SP_LISTARREPORENTRADA_Result)">
+      <Parameter Name="fecini" Mode="In" Type="DateTime" />
+      <Parameter Name="fecfin" Mode="In" Type="DateTime" />
+      <Parameter Name="area" Mode="In" Type="Int32" />
+      <Parameter Name="articulo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_LISTAR_ARTICULOS_BY_STOCK" EntitySet="Articulos" ReturnType="Collection(Entities.Articulo)">
+      <Parameter Name="idArea" Mode="In" Type="Int32" />
+      <Parameter Name="nombreArticulo" Mode="In" Type="String" />
+      <Parameter Name="considerarStock" Mode="In" Type="Boolean" />
+      <Parameter Name="bajoStock" Mode="In" Type="Boolean" />
+      <Parameter Name="sinStock" Mode="In" Type="Boolean" />
+      <Parameter Name="idPuesto" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DELETE_DOCUMENT_ARTICLE">
+      <Parameter Name="NUMID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="BANCOes" EntityType="Entities.BANCO" />
+    <AssociationSet Name="FK_BANCO" Association="Entities.FK_BANCO">
+      <End Role="BANCO" EntitySet="BANCOes" />
+      <End Role="Proveedor" EntitySet="Proveedores" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="UsuarioValidarLogin_Result">
+    <Property Type="Int32" Name="Id_Usuario" Nullable="false" />
+    <Property Type="String" Name="Nombres" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Apellidos" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Usuario1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="ID_PUESTO" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllAreaByEstado_Result">
+    <Property Type="Int32" Name="Id_Area" Nullable="false" />
+    <Property Type="String" Name="CodArea" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllArticuloByEstado_Result">
+    <Property Type="Int32" Name="Id_Articulo" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="Stock" Nullable="false" />
+    <Property Type="String" Name="Moneda" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="Costo" Nullable="false" Precision="19" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" />
+    <Property Type="Int32" Name="Id_Area" Nullable="false" />
+    <Property Type="Int32" Name="Id_UnidadMedida" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllEmpresaByEstado_Result">
+    <Property Type="Int32" Name="Id_Empresa" Nullable="false" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllProveedorByEstado_Result">
+    <Property Type="Int32" Name="Id_Proveedor" Nullable="false" />
+    <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllSedeByEstado_Result">
+    <Property Type="Int32" Name="Id_Sede" Nullable="false" />
+    <Property Type="String" Name="NombreSede" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="TELEFONO" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="SP_GetAllUnidadMedidaByEstado_Result">
+    <Property Type="Int32" Name="Id_UnidadMedida" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTARREPORSALIDA_Result">
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="NombreSede" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NombreArea" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DescripcionArticulo" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UnidadMedida" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Cantidad" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTARREPORSALIDA_Result1">
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="NombreSede" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NombreArea" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DescripcionArticulo" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UnidadMedida" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Cantidad" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ListaEstadSalida_Resultado">
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="NombreSede" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NombreArea" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DescripcionArticulo" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UnidadMedida" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Cantidad" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTARREPORENTRADA_Result">
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="NombreArea" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DescripcionArticulo" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UnidadMedida" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Cantidad" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTAR_ARTICULOS_BY_STOCK_Result">
+    <Property Type="Int32" Name="Id_Articulo" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="Stock" Nullable="false" />
+    <Property Type="String" Name="Moneda" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="Costo" Nullable="false" Precision="19" />
+    <Property Type="String" Name="UsuarioCreacion" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" />
+    <Property Type="String" Name="UsuarioModificacion" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaModificacion" Nullable="true" />
+    <Property Type="Int32" Name="Id_Area" Nullable="false" />
+    <Property Type="Int32" Name="Id_UnidadMedida" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+    <Property Type="Double" Name="CantidadMinima" Nullable="true" />
+    <Property Type="String" Name="Marca" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <EntityType Name="BANCO">
+    <Key>
+      <PropertyRef Name="Id_Banco" />
+    </Key>
+    <Property Name="Id_Banco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreacion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Proveedors" Relationship="Entities.FK_BANCO" FromRole="BANCO" ToRole="Proveedor" />
+  </EntityType>
+  <Association Name="FK_BANCO">
+    <End Type="Entities.BANCO" Role="BANCO" Multiplicity="0..1" />
+    <End Type="Entities.Proveedor" Role="Proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANCO">
+        <PropertyRef Name="Id_Banco" />
+      </Principal>
+      <Dependent Role="Proveedor">
+        <PropertyRef Name="Id_Banco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

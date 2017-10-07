@@ -16,3 +16,13 @@ E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.BE\
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.BE\bin\Debug\EntityFramework.SqlServer.xml
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.BE\obj\Debug\MD.GA.BE.dll
 E:\Datos\UPC\Ciclo\VII\Desarrollo de Sistemas Distribuidos\DSDProyecto\MD.GA.BE\obj\Debug\MD.GA.BE.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Debug\MD.GA.BE.dll.config
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Debug\MD.GA.BE.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Debug\MD.GA.BE.pdb
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Debug\EntityFramework.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Debug\EntityFramework.SqlServer.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Debug\EntityFramework.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\bin\Debug\EntityFramework.SqlServer.xml
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\obj\Debug\MD.GA.BE.csproj.CoreCompileInputs.cache
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\obj\Debug\MD.GA.BE.dll
+D:\UPC\Sistemas Distribuidos\PyDSD\MD.GA.BE\obj\Debug\MD.GA.BE.pdb
